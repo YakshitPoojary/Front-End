@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,66 +8,64 @@
     <title>User Signup</title>
     <link rel="stylesheet" href="signup.css">
 </head>
+
 <body>
 
     <div class="header">
         <div class="logo-title"><a href="home.html" style="color: #F64C72;">Notedemy</a></div>
         <ul class="right-links">
-            <li><a href="#about-container">About</a></li>
-            <li><a href="signup.html">User  Signup</a></li>
-            <li><a href="login.html">User  Login</a></li>
-            <li><a href="a_login.html">Admin  Login</a></li>
+            <li><a href="home.html#about-container">About</a></li>
+            <li><a href="signup.html">User Signup</a></li>
+            <li><a href="login.html">User Login</a></li>
+            <li><a href="a_login.html">Admin Login</a></li>
             <li><a href="contact.html">Contact Us</a></li>
         </ul>
     </div>
 
     <!--First Name, Last Name, Username, Email, Password, Branch, Role-->
-    
-        <form>
-            <h3>Register</h3>
-            <div class="side">
 
-                <div class="fname">
-                    <label for="fname">First Name: </label>
-                    <input type="text" id="fname" name="fname" size="40">
-                </div>
+    <form>
+        <h3>Register</h3>
+        <div class="side">
+            <div><label for="fname">First Name: </label>
+                <input type="text" id="fname" name="fname" size="40"></div>
 
-                <div class="lname">
-                    <label for="lname">Last Name: </label>
-                    <input type="text" id="lname" name="lname" size="40">
-                </div>
 
+                <div class="lname"><label for="lname">Last Name: </label>
+                <input type="text" id="lname" name="lname" size="40">
             </div>
+        </div>
 
-            <div class="login-details">
-                <label for="uname">Username: </label><br>
-                <input type="text" id="uname" name="uname">
-            
-                <label for="email">Email: </label><br>
-                <input type="text" id="email" name="email">
+        <div class="login-details">
+            <label for="uname">Username: </label>
+            <input type="text" id="uname" name="uname">
 
-                <label for="pword">Password: </label><br>
-                <input type="password" id="pword" name="pword">
-            </div>
+            <label for="email">Email: </label>
+            <input type="text" id="email" name="email">
+
+            <label for="pword">Password: </label>
+            <input type="password" id="pword" name="pword">
+        </div>
 
 
-            <div class="dropdown">
-                <label for="branch" id="branch">Branch: </label>
-                <select id="branch" name="branch">
-                    <option value="CSE">Computer Science</option>
-                    <option value="IT">Information Technology</option>
-                    <option value="MECH">Mechanical</option>
-                    <option value="ETRX">Electronics</option>
-                </select><br>
+        <div class="dropdown">
+            <label for="branch" id="branch">Branch: </label>
+            <select id="branch" name="branch" >
+                <option value="CSE">Computer Science</option>
+                <option value="IT">Information Technology</option>
+                <option value="MECH">Mechanical</option>
+                <option value="ETRX">Electronics</option>
+            </select>
 
-                <label for="role" id="role">Role: </label>
-                <select name="role" id="role">
-                    <option value="std">Student</option>
-                    <option value="tch">Teacher</option>
-                </select><br><br><br>
-            </div>
+            <label for="role" id="role">Role: </label>
+            <select name="role" id="role" >
+                <option value="std">Student</option>
+                <option value="tch">Teacher</option>
+            </select><br><br><br>
+        </div>
 
-            <button>Register</button>
-        </form>
+        <button>Register</button>
+    </form>
 </body>
+
 </html>
