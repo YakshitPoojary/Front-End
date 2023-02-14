@@ -1,6 +1,12 @@
+html{
+    height: 100%;
+}
+
 body{
-    background-color: #080710;
-    color: white;
+    background-image: linear-gradient(white,rgb(214, 224, 120));
+    background-repeat: no-repeat;
+    color: black;
+    font-family: 'Poppins',sans-serif;
 }
 
 a{
@@ -47,12 +53,13 @@ form{
     border: 2px solid rgba(255,255,255,0.1);
     box-shadow: 0 0 40px rgba(8,7,16,0.6);
     padding: 0px 35px;
-    margin-top: 150px;
+    margin-top: 70px;
+    background-color: white;
 }
 
 form *{
     font-family: 'Poppins',sans-serif;
-    color: #ffffff;
+    color: black;
     letter-spacing: 0.5px;
     outline: none;
     border: none;
@@ -85,6 +92,7 @@ input{
     width: 100%;
     background-color: rgba(255,255,255,0.07);
     border-radius: 3px;
+    border: 1px solid black;
     padding: 0 10px;
     margin-top: 8px;
     font-size: 14px;
