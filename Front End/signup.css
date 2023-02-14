@@ -3,7 +3,7 @@ html{
 }
 
 body{
-    background-image: linear-gradient(white,rgb(214, 224, 120));
+    background-image: linear-gradient(white,rgb(57, 112, 213));
     background-repeat: no-repeat;
     color: black;
     font-family: 'Poppins',sans-serif;
@@ -11,15 +11,17 @@ body{
 
 a{
     text-decoration: none;
-    color: white;
+    color: #080710;
 }
 
-.header{
+.navbar{
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-weight: bold;
     font-size: 20px;
+    margin: -8px;
+    padding: 10px 10px;
 }
 
 .logo-title{
@@ -41,9 +43,8 @@ a{
 }
 
 form{
-    height: 750px;
+    height: 580px;
     width: 800px;
-    background-color: rgba(255,255,255,0.13);
     position: absolute;
     transform: translate(-50%,-50%);
     top: 50%;
@@ -53,13 +54,13 @@ form{
     border: 2px solid rgba(255,255,255,0.1);
     box-shadow: 0 0 40px rgba(8,7,16,0.6);
     padding: 0px 35px;
-    margin-top: 70px;
-    background-color: white;
+    margin-top: 50px;
+    background-color: aliceblue;
 }
 
 form *{
     font-family: 'Poppins',sans-serif;
-    color: black;
+    color: #080710;
     letter-spacing: 0.5px;
     outline: none;
     border: none;
@@ -75,8 +76,8 @@ form h3{
 button{
     margin-top: 50px;
     width: 100%;
-    background-color: #ffffff;
-    color: #080710;
+    background-color: #080710;
+    color: aliceblue;
     padding-top: 15px;
     padding-bottom: 15px;
     margin-bottom: 10px;
@@ -108,10 +109,7 @@ label{
 
 .side{
     display: flex ;
-    /* align-items: center; */
     flex-direction: row;
-    /* padding: 3em; */
-    /* justify-content: space-between;  */
 }
 
 .login-details{
@@ -132,11 +130,11 @@ label{
 
 select,option{
     margin-top: 2em;
-    background-color: #ffffff;
+    background-color: aliceblue;
     color: #080710;
     margin-left: 1em;
     margin-right: 1em;
     border-radius: 3px;
     padding: 0.2em 1em;
-
+    border: 1px solid black;
 }
