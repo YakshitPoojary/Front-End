@@ -14,34 +14,6 @@ a{
     color: #080710;
 }
 
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: bold;
-    font-size: 20px;
-    margin: -8px;
-    padding: 10px 10px;
-}
-
-.logo-title{
-    margin-left: 0px;
-    font-size: 40px;
-    color: #F64C72;
-    font-family: 'Playfair Display';
-    font-style: italic;
-    font-weight: bolder;
-    padding-left: 50px;
-}
-
-.right-links{
-    display: flex;
-    gap: 80px;
-    justify-content: space-between;
-    list-style: none;
-    padding-right: 50px;
-}
-
 form{
     height: 400px;
     width: 400px;

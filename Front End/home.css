@@ -14,14 +14,8 @@ a{
     color: black;
 }
 
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: bold;
-    font-size: 20px;
-    margin: -8px;
-    padding: 10px 10px;
+.f-playfair {
+    font-family: 'Playfair Display';
 }
 
 .logo-title{
