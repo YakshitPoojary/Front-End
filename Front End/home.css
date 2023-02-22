@@ -28,13 +28,6 @@ a{
     padding-left: 50px;
 }
 
-.right-links{
-    display: flex;
-    gap: 80px;
-    justify-content: space-between;
-    list-style: none;
-    padding-right: 50px;
-}
 
 .about-text{
     display: flex;
