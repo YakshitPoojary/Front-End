@@ -128,12 +128,27 @@ label{
     margin-right: 1em;
 }
 
+#dropdown{
+    margin-top: 2em;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    /* margin: 1em */
+
+
+}
+
+.register-btn {
+    margin-top: 2em;
+}
+
 select,option{
     margin-top: 2em;
     background-color: aliceblue;
     color: #080710;
     margin-left: 1em;
     margin-right: 1em;
+    /* margin-top: 1em; */
     border-radius: 3px;
     padding: 0.2em 1em;
     border: 1px solid black;

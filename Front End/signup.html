@@ -12,7 +12,7 @@
 
 <body>
     
-    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-0 mb-4">
         <a href="home.html" class="d-flex align-items-center fs-1 col-md-3 mb-2 mb-md-0 text-decoration-none ms-5 f-playfair" style="color: #F64C72;">
             <b><em>Notedemy</em></b>
         </a>
@@ -24,9 +24,9 @@
           <li><a href="contact.html" class="nav-link px-2 link-dark me-3">Contact Us</a></li>
         </ul>
   
-        <div class="col-md-3 text-end pe-4">
+        <div class="col-md-2 text-end pe-4 ">
           <a href="login.html"><button type="button" class="btn btn-outline-primary me-4">Login</button></a> 
-          <a href="signup.html"><button type="button" class="btn btn-primary" >Sign-up</button></a>
+
         </div>
     </header>
 
@@ -66,7 +66,7 @@
 
         <div class="dropdown">
             <label for="branch" id="branch">Branch: </label>
-            <select id="branch" name="branch" >
+            <select id="dropdown" name="branch" >
                 <option value="CSE">Computer Science</option>
                 <option value="IT">Information Technology</option>
                 <option value="MECH">Mechanical</option>
@@ -74,13 +74,13 @@
             </select>
 
             <label for="role" id="role">Role: </label>
-            <select name="role" id="role" >
+            <select name="role" id="dropdown" >
                 <option value="std">Student</option>
                 <option value="tch">Teacher</option>
             </select>
         </div>
 
-        <button type="submit">Register</button>
+        <button type="submit" class="register-btn">Register</button>
     </form>
 </body>
 
