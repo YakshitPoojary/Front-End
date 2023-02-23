@@ -15,6 +15,8 @@ h3 {
     font-size: 50px;
     color: #080710;
     text-align: center;
+    padding: 0px;
+    margin: 0px;
 }
 
 h4 {
@@ -169,6 +171,7 @@ a{
     padding-right: 50px;
 }
 
-.container{
+/* .container{
     margin-top: -15px;
-}
+    justify-content: center;
+} */
