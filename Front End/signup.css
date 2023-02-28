@@ -9,6 +9,10 @@ body{
     font-family: 'Poppins',sans-serif;
 }
 
+.f-playfair {
+    font-family: 'Playfair Display';
+}
+
 a{
     text-decoration: none;
     color: #080710;
