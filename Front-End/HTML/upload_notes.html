@@ -11,24 +11,25 @@
 </head>
 
 <body>
-	
-<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 ">
-	<a href="home.html"
-	  class="d-flex align-items-center fs-1 col-md-3 mb-2 mb-md-0 text-decoration-none ms-5 f-playfair"
-	  style="color: #F64C72;">
-	  <b><em>Notedemy</em></b>
-	</a>
-  
-	<ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-	  <li><a href="home.html" target="_top" class="nav-link px-2 link-secondary me-3">Home</a></li>
-	  <li><a href="notes_display.html" target="_top" class="nav-link px-2 link-dark me-3">Search Notes</a></li>
-	  <li><a href="upload_notes.html" target="_top" class="nav-link px-2 link-dark me-3">Upload Notes</a></li>
-	  <li><a href="user_contact.html" target="_top" class="nav-link px-2 link-dark me-3">Contact Us</a></li>
-	</ul>
-	<div class="col-md-3 text-end pe-4">
-	  <a href="user_profile.html" target="_top"><button type="button" class="btn btn-outline-primary me-4">My Profile</button></a>
-	</div>
-  </header>
+
+	<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 ">
+		<a href="home.html"
+			class="d-flex align-items-center fs-1 col-md-3 mb-2 mb-md-0 text-decoration-none ms-5 f-playfair"
+			style="color: #F64C72;">
+			<b><em>Notedemy</em></b>
+		</a>
+
+		<ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+			<li><a href="home.html" target="_top" class="nav-link px-2 link-secondary me-3">Home</a></li>
+			<li><a href="notes_display.html" target="_top" class="nav-link px-2 link-dark me-3">Search Notes</a></li>
+			<li><a href="upload_notes.html" target="_top" class="nav-link px-2 link-dark me-3">Upload Notes</a></li>
+			<li><a href="user_contact.html" target="_top" class="nav-link px-2 link-dark me-3">Contact Us</a></li>
+		</ul>
+		<div class="col-md-3 text-end pe-4">
+			<a href="user_profile.html" target="_top"><button type="button" class="btn btn-outline-primary me-4">My
+					Profile</button></a>
+		</div>
+	</header>
 
 	<div class="container card shadow mt-0" style="font-family: 'IBM Plex Sans', sans-serif;">
 		<div class="card-body">
@@ -40,7 +41,7 @@
 				</div>
 				<div class="col-sm-6">
 
-					<form method="post" enctype="multipart/form-data">
+					<form method="post" action="../notes/upload.php" enctype="multipart/form-data">
 						<label for="Branch" class="form-label"> Branch</label>
 						<select class="form-control" name="branch" id="branch">
 							<option value="" selected disabled>--- Select Branch ---</option>
@@ -58,7 +59,7 @@
 						</select>
 
 						<label>Notes File</label>
-						<input type="file" name="notesfile" class="form-control">
+						<input type="file" name="notesfile" id="notesfile" class="form-control">
 
 						<label> File Type</label>
 						<select class="form-control" name="filetype">
