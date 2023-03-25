@@ -13,18 +13,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $branch = $_POST['branch'];
     $role = $_POST['role'];
-    $exists = false;
-    if (($password == $cpassword) && $exists == false) {
-    // if ($exists == false) {
-        $sql = "INSERT INTO `user` (`id`, `fname`, `lname`, `email`, `password`, `username`, `branch_id`, `role`, `admin`) VALUES (NULL, '$firstName', '$lastName', '$email', '$password', '$username', '$branch', '$role', '1')";
-        $result = mysqli_query($conn, $sql);
-        if ($result) {
-            $showAlert = true;
+    // $exists = false;
+    //check if already exist
+    $exitSql = "Select * from `user` where username ='$username'";
+    // echo $exitSql;
+    $result = mysqli_query($conn,$exitSql);
+    $numExistRows = mysqli_num_rows($result);
+    if($numExistRows > 0){
+        // $exists =true;
+        $showError="User already exist";
+    }else{
+        $exists =false;
+        if (($password == $cpassword)) {
+        // if ($exists == false) {
+            $sql = "INSERT INTO `user` (`id`, `fname`, `lname`, `email`, `password`, `username`, `branch_id`, `role`, `admin`) VALUES (NULL, '$firstName', '$lastName', '$email', '$password', '$username', '$branch', '$role', '1')";
+            $result = mysqli_query($conn, $sql);
+            if ($result) {
+                $showAlert = true;
+            }
         }
+        else{
+            $showError="Passwords do not match";
+        }
+        
     }
-    else{
-        $showError="User already exist or the passwords dont match";
-    }
+
 }
 ?>
 
@@ -82,15 +95,15 @@ if($showError){
 
         <div class="col-8">
             <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="home.html" class="nav-link px-2 link-secondary me-3">Home</a></li>
-                <li><a href="" class="nav-link px-2 link-dark me-3">Features</a></li>
+                <li><a href="home.php" class="nav-link px-2 link-secondary me-3">Home</a></li>
+                <li><a href="user_profile.php" class="nav-link px-2 link-dark me-3">Profile</a></li>
                 <li><a href="#" class="nav-link px-2 link-dark me-3">FAQs</a></li>
                 <li><a href="contact.html" class="nav-link px-2 link-dark me-3">Contact Us</a></li>
             </ul>
         </div>
 
         <div class="col-2 text-center">
-            <a href="login.html" class="btn btn-primary ps-5 pe-5">Login</a>
+            <a href="login.php" class="btn btn-primary ps-5 pe-5">Login</a>
         </div>
     </header>
 

@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
+    header("location: login.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,7 +41,7 @@
     </header>
 
     <div id="about-container">
-        <div class="title">About Notedemy</div>
+        <div class="title">About Notedemy </div>
         <div class="about-text">
             <div class="about-image"><img
                     src="https://i.kym-cdn.com/entries/icons/mobile/000/032/965/making-of-a-2d-animation-for-chilledcow-20180706052709.jpg"

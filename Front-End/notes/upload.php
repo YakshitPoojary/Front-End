@@ -1,4 +1,5 @@
 <?php
+session_start();
         $fileName=$_FILES['notesfile']['name'];
 	$tmpName=$_FILES['notesfile']['tmp_name'];
         $branch = $_POST['branch'];
@@ -7,6 +8,8 @@
         $description=$_POST['description'];
         $data = explode('.',$fileName);
         $ext = strtolower(end($data));
+        $id = $_SESSION['id'];
+       
 
        
 
@@ -22,7 +25,7 @@
 
         // this code is for adding data in database
         include '..\..\Back-End\_dbconnect.php';
-        $sql = "INSERT INTO `note` (`id`, `title`, `extension`, `description`, `status`, `user_id`, `directory`) VALUES (NULL, '$fileName', '$ext', '$description', NULL, '2', '$filePath');";
+        $sql = "INSERT INTO `note` (`id`, `title`, `extension`, `description`, `status`, `user_id`, `directory`) VALUES (NULL, '$fileName', '$ext', '$description', NULL, '$id', '$filePath');";
         $result = mysqli_query($conn, $sql);
         
         
