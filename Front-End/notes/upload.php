@@ -4,6 +4,11 @@
         $branch = $_POST['branch'];
         $subject = $_POST['subject'];
         $module = $_POST['module'];
+        $description=$_POST['description'];
+        $data = explode('.',$fileName);
+        $ext = strtolower(end($data));
+
+       
 
         $filePath =  $branch . '/' . $subject . '/' . $module;
         if (!file_exists($filePath)) {
@@ -13,10 +18,12 @@
         echo $fileDirectory;
         move_uploaded_file ($tmpName, $fileDirectory);
         // header("Location: http://localhost:8000/HTML/upload_notes.html");
-        header("Location: ../HTML/upload_notes.html");
-        // header("Location: ../HTML/login.html");
-        // echo '<script>alert("Welcome to Geeks for Geeks")</script>';
-              
-            
+        header("Location: ../HTML/upload_notes.php");
+
+        // this code is for adding data in database
+        include '..\..\Back-End\_dbconnect.php';
+        $sql = "INSERT INTO `note` (`id`, `title`, `extension`, `description`, `status`, `user_id`, `directory`) VALUES (NULL, '$fileName', '$ext', '$description', NULL, '2', '$filePath');";
+        $result = mysqli_query($conn, $sql);
+        
         
  ?>

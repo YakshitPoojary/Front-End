@@ -9,6 +9,7 @@ var branchObject = {
       "Analysis of Algorithms":["Introduction to analysis of algorithm","Greedy Technique","String Matching Algorithms","Non-deterministic Polynomial Algorithms"], 
       "Relational Database Management Systems":["Introduction To RDBMS","Data Modeling: Enhanced-Entity-Relationship Model and Relational Data Model","Relational Algebra and Structured Query Language (SQL)","Query Processing and optimization","Relational–Database Design","Transaction Management, Concurrency control and Recovery protocols"], 
       "Theory of Automata with Compiler Design":["Finite Automata","Regular Languages","Context Free Grammars","Push Down Automata","Turing Machine","Un-decidability and Recursively Enumerable Languages"], 
+      "Honours":["Module 1","Module 2","Module 3","Module 4","Module 5","Module 6"]
       
       
 
@@ -76,17 +77,17 @@ var branchObject = {
       branchSel.options[branchSel.options.length] = new Option(x, x);
     }
     branchSel.onchange = function() {
-      //empty Chapters- and Topics- dropdowns
-      moduleSel.length = 1;
-      subjectSel.length = 1;
+    //empty Chapters- and Topics- dropdowns
+    moduleSel.length = 1;
+    subjectSel.length = 1;
       //display correct values
       for (var y in branchObject[this.value]) {
         subjectSel.options[subjectSel.options.length] = new Option(y, y);
       }
     }
     subjectSel.onchange = function() {
-      //empty Chapters dropdown
-      moduleSel.length = 1;
+    //empty Chapters dropdown
+     moduleSel.length = 1;
       //display correct values
       var z = branchObject[branchSel.value][this.value];
       for (var i = 0; i < z.length; i++) {

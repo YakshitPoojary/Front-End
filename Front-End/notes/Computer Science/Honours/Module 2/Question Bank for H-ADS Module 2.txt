@@ -1,0 +1,46 @@
+Question Bank for H-ADS Module 2
+
+What is dataframe ? Explain with example.
+or
+Explain dataframe in detail.
+
+Explain High order moments
+or 
+Explain skewness and Kurtosis with example.
+
+Explain the significance of skewness and Kurtosis in data science
+
+Write a code for skewness and Kurtosis in R.
+
+Write a code for Matrix declaration in R.
+
+Write a code for Random Matrix declaration in R.
+
+Compare regression and correlation
+
+Write a short note on Heteroskedasticity.
+
+Write a short note on logit and probit.
+
+Explain Finance Models in details.
+
+Why Brownian Motions useful in finance Model.
+
+Why Monte Carlo useful in finance Model.
+
+Write a short note on Portfolio Computations.
+
+What is the Finance model? Explain its types in detail?
+What is a data frame? Explain the usability of a data frame in data science.
+Explain skewness and kurtosis with a diagram?
+What is regression? Explain the usability of regression in data science.
+What is regression?  How is Heteroskedasticity related to regression?
+Explain Auto-Regressive Models.
+Explain Logit and probit.
+Explain Monte-Carlo as a finance model.
+Explain the use of Brownian motions in the finance model.
+Write a short note on portfolio management.
+Explain ARCH and GARCH.
+
+This is most probable question bank.
+Questions in exam may or may not come.
