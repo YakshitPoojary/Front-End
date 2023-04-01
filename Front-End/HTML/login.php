@@ -42,6 +42,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $showError="Invalid Credentials";
     }
 }
+
+
+
+
 ?>
 
 
@@ -129,7 +133,7 @@ if($showError){
 
     <!-- Register buttons -->
     <div class="text-center">
-      <p>Not a member? <a href="signup.html">Register</a></p>
+      <p>Not a member? <a href="signup.php">Register</a></p>
     </div>
   </form>
 

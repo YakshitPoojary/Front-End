@@ -34,8 +34,8 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
                     <div class="card-body text-center ">
                         <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
                             alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
-                        <h5 class="my-3"><?php echo $_SESSION['username'];?></h5>
-                        <h6 class="my-3">Username</h6>
+                        <h5 class="my-3"><?php echo $_SESSION['fname']." ". $_SESSION['lname'];?></h5>
+                        <h6 class="my-3"><?php echo $_SESSION['username'];?></h6>
 
                         <p class="text-muted mb-1"><?php echo $_SESSION['role'];?></p>
                     </div>
