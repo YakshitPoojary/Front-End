@@ -2,7 +2,8 @@
 
 $login = false;
 $showError = false;
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") 
+{
     include '..\..\Back-End\_dbconnect.php';
     $username = $_POST["username"];
     $password = $_POST["password"];
@@ -64,29 +65,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 
 <?php
-if($login){
-    echo 
-  '<div class="alert alert-success alert-dismissible fade show" role="alert">
-  <strong>Successfull!</strong> You are logged in
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>';
-}
-if($showError){
-    echo 
-  '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-  <strong>Failed!</strong> '.$showError.'.
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>';
-}
+  if($login)
+  {
+      echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+              <strong>Successfull!</strong> You are logged in
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>';
+  }
+  if($showError)
+  {
+      echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <strong>Failed!</strong> '.$showError.'.
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>';
+  }
 ?>
 
   <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 ">
-    <a href="home.php" class="d-flex align-items-center fs-1 col-md-3 mb-2 mb-md-0 text-decoration-none ms-5 f-playfair"
-      style="color: #F64C72;">
+    <a href="home.php" class="d-flex align-items-center fs-1 col-md-3 mb-2 mb-md-0 text-decoration-none ms-5 f-playfair" style="color: #F64C72;">
       <b><em>Notedemy</em></b>
     </a>
 
