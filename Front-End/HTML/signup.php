@@ -180,7 +180,7 @@
 
     <header class="row align-items-center justify-content-center align-item-center mb-3 mt-3" style="--bs-gutter-x: 0;">
         <div class="col-2 text-center">
-            <a href="home.html" class="align-items-center fs-1 text-decoration-none f-playfair" style="color: #F64C72;">
+            <a href="home.php" class="align-items-center fs-1 text-decoration-none f-playfair" style="color: #F64C72;">
                 <b><em>Notedemy</em></b>
             </a>
         </div>
@@ -210,53 +210,61 @@
                             <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 row justify-content-center">Register</h3>
                             <form action="signup.php" method="post" required>
 
-                                <div class="row mb-4">
+                                <div class="row mb-3">
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
-                                            <input type="text" id="firstName" name="firstName" class="form-control form-control-md"
-                                                placeholder="First Name" />
+                                            <input type="text" id="firstName" name="firstName" class="form-control border-dark form-control-md"
+                                                placeholder="First Name"/>
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
-                                            <input type="text" id="lastName" name="lastName" class="form-control form-control-md"
-                                                placeholder="Last Name" />
+                                            <input type="text" id="lastName" name="lastName" class="form-control border-dark form-control-md"
+                                                placeholder="Last Name"/>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-md-12 mb-5 d-flex align-items-center">
+                                    <div class="col-md-12 mb-4 d-flex align-items-center">
                                         <div class="form-outline datepicker w-100">
-                                            <input type="text" class="form-control form-control-md" id="email" name="email" pattern='^[a-zA-Z0-9._%+-]+@.*somaiya\.edu$' title="Invalid email format"
-                                                placeholder="Email Id" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row mb-4">
-                                    <div class="col-md-6 mb-4 pb-2">
-                                        <div class="form-outline">
-                                            <input type="text" id="username" name="username" class="form-control form-control-md"
-                                                placeholder="Username"  />
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6 mb-4 pb-2">
-                                        <div class="form-outline">
-                                            <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  title="Password must be at least 8 characters long" class="form-control form-control-md"
-                                                placeholder="Password" />
-                                        </div>
-                                        <div class="form-outline">
-                                            <input type="password" id="cpassword" name="cpassword" class="form-control form-control-md"
-                                                placeholder="Confirm Password" />
+                                            <input type="text" class="form-control border-dark form-control-md" id="email" name="email" pattern='^[a-zA-Z0-9._%+-]+@.*somaiya\.edu$' title="Invalid email format"
+                                                placeholder="Email Id"/>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="row">
+                                    <div class="col-md-12 mb-4 pb-2">
+                                        <div class="form-outline">
+                                            <input type="text" id="username" name="username" class="form-control border-dark form-control-md"
+                                                placeholder="Username"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-4">
+
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  title="Password must be at least 8 characters long" class="form-control border-dark form-control-md"
+                                                placeholder="Password"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <input type="password" id="cpassword" name="cpassword" class="form-control border-dark form-control-md"
+                                                placeholder="Confirm Password"/>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+
                                     <div class="col-6">
-                                        <select class="select form-control-md p-2" name="branch" id="branch">
+                                        <select class="select form-control-md border-dark p-2" name="branch" id="branch">
                                             <option  selected disabled>Branch</option>
                                             <option value="1">Computer Engineering</option>
                                             <option value="2">Information Technology</option>
@@ -265,17 +273,19 @@
                                             <option value="5">Telecommunication</option>
                                         </select>
                                     </div>
+
                                     <div class="col-6">
-                                        <select  class="select form-control-md p-2" name="role" id="role">
+                                        <select  class="select form-control-md border-dark p-2" name="role" id="role">
                                             <option selected disabled>Role</option>
                                             <option value="1">Student</option>
                                             <option value="2">Teacher</option>
                                         </select>
                                     </div>
+
                                 </div>
 
                                 <div class="mt-3 pt-2 row justify-content-center">
-                                    <input class="btn btn-primary btn-md" type="submit" value="Submit" />
+                                    <input class="btn btn-primary btn-md" type="submit" value="Submit"/>
                                 </div>
                             </form>
                         </div>

@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			<hr>
 			<div class="row">
 				<div class="col-sm-6">
-					<img src="../images/file.png" style="width: 80%; height: 450px" class="mt-3">
+					<img src="../images/upload.png" style="width: 80%; height: 450px" class="mt-3">
 				</div>
 				<div class="col-sm-6">
 

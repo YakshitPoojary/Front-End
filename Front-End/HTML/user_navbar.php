@@ -1,5 +1,5 @@
 <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 ">
-  <a href="home.html" class="d-flex align-items-center fs-1 col-md-3 mb-2 mb-md-0 text-decoration-none ms-5 f-playfair"
+  <a href="home.php" class="d-flex align-items-center fs-1 col-md-3 mb-2 mb-md-0 text-decoration-none ms-5 f-playfair"
     style="color: #F64C72;">
     <b><em>Notedemy</em></b>
   </a>

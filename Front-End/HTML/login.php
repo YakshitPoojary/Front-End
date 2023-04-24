@@ -62,6 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
+
 <?php
 if($login){
     echo 
@@ -81,30 +82,25 @@ if($showError){
   </button>
 </div>';
 }
-
-
 ?>
 
-  <header class="row align-items-center justify-content-center align-item-center py-0 mb-4 mt-3"
-    style="--bs-gutter-x: 0;">
-    <div class="col-2 text-center">
-      <a href="home.html" class="align-items-center fs-1 text-decoration-none f-playfair" style="color: #F64C72;">
-        <b><em>Notedemy</em></b>
-      </a>
+  <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 ">
+    <a href="home.php" class="d-flex align-items-center fs-1 col-md-3 mb-2 mb-md-0 text-decoration-none ms-5 f-playfair"
+      style="color: #F64C72;">
+      <b><em>Notedemy</em></b>
+    </a>
+
+    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+      <li><a href="home.php" target="_top" class="nav-link px-2 link-secondary me-3">Home</a></li>
+      <li><a href="notes_display.php" target="_top" class="nav-link px-2 link-dark me-3">Search Notes</a></li>
+      <li><a href="upload_notes.php" target="_top" class="nav-link px-2 link-dark me-3">Upload Notes</a></li>
+      <li><a href="user_contact.html" target="_top" class="nav-link px-2 link-dark me-3">Contact Us</a></li>
+    </ul>
+
+    <div class="col-md-3 text-end pe-4">
+      <a href="signup.php" target="_top"><button type="button" class="btn btn-outline-primary me-4">Sign Up</button></a>
     </div>
 
-    <div class="col-8">
-      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="home.php" class="nav-link px-2 link-secondary me-3">Home</a></li>
-        <li><a href="" class="nav-link px-2 link-dark me-3">Features</a></li>
-        <li><a href="#" class="nav-link px-2 link-dark me-3">FAQs</a></li>
-        <li><a href="contact.html" class="nav-link px-2 link-dark me-3">Contact Us</a></li>
-      </ul>
-    </div>
-
-    <div class="col-2 text-center">
-      <a href="signup.php" class="btn btn-primary ps-5 pe-5">Sign-up</a>
-    </div>
   </header>
 
   <form class="mt-4" method="post">
@@ -127,12 +123,10 @@ if($showError){
       <!-- <button type="button" class="btn btn-primary btn-block mb-4 ">Login</button> -->
       <input class="btn btn-primary btn-md" type="submit" value="Login" />
       <!-- <a href="user_profile.html" class="btn btn-primary btn-block mb-4">Login</a> -->
-
-
     </div>
 
     <!-- Register buttons -->
-    <div class="text-center">
+    <div class="text-center mt-1">
       <p>Not a member? <a href="signup.php">Register</a></p>
     </div>
   </form>
