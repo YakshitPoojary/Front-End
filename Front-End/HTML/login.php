@@ -15,18 +15,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         echo $user[4];
         echo $password;
         echo Hash::verify($password, $user[4]);
-        if (Hash::verify($password,$user[4])){
+        // if (Hash::verify($password,$user[4])){
+          if($password==$user[4]){
           $login = true;
           session_start();
             $row = mysqli_fetch_array($result);
             $_SESSION['loggedin'] = true;
-            $_SESSION['id'] = $row['id'];
-            $_SESSION['fname'] = $row['fname'];
-            $_SESSION['lname'] = $row['lname'];
-            $_SESSION['email'] = $row['email'];
+            $_SESSION['id'] = $user[0];
+            $_SESSION['fname'] = $user[1];
+            $_SESSION['lname'] = $user[2];
+            $_SESSION['email'] = $user[3];
             $_SESSION['username'] = $username;
-            $_SESSION['branch'] = $row['branch_id'];
-            $_SESSION['role'] = $row['role'];
+            $_SESSION['branch'] = $user[6];
+            $_SESSION['role'] = $user[7];
             if($_SESSION['role']==1){
               $_SESSION['role']="Student";
             }else{

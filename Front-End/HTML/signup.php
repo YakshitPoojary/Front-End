@@ -180,17 +180,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     </div>
                                 </div>
 
-                                <div class="row mb-4">
-                                    <div class="col-md-6 mb-4 pb-2">
-                                        <div class="form-outline">
+                                
+                                <div class="row">
+                                    <div class="col-md-12 mb-5 d-flex align-items-center ">
+                                        <div class="form-outline w-100">
                                             <input type="text" id="username" name="username" class="form-control form-control-md" placeholder="Username" />
                                         </div>
                                     </div>
 
-                                    <div class="col-md-6 mb-4 pb-2">
+                               <div class="row mb-4">
+                                    <div class="col-md-6 mb-4">
                                         <div class="form-outline">
                                             <input type="password" id="password" name="password" title="Password must be at least 8 characters long" class="form-control form-control-md" placeholder="Password" />
                                         </div>
+                                    </div> 
+                                    <div class="col-md-6 mb-4">
                                         <div class="form-outline">
                                             <input type="password" id="cpassword" name="cpassword" class="form-control form-control-md" placeholder="Confirm Password" />
                                         </div>
@@ -199,7 +203,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                                 <div class="row">
                                     <div class="col-6">
-                                        <select class="select form-control-md p-2" name="branch" id="branch">
+                                        <select class="select form-control-md p-2" name="branch" id="branch" style="width: 300px">
                                             <option selected disabled>Branch</option>
                                             <option value="1">Computer Engineering</option>
                                             <option value="2">Information Technology</option>
@@ -209,7 +213,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         </select>
                                     </div>
                                     <div class="col-6">
-                                        <select class="select form-control-md p-2" name="role" id="role">
+                                        <select class="select form-control-md p-2" name="role" id="role" style="width: 300px">
                                             <option selected disabled>Role</option>
                                             <option value="1">Student</option>
                                             <option value="2">Teacher</option>
