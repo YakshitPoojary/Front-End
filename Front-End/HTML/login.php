@@ -5,13 +5,17 @@ $showError = false;
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
     include '..\..\Back-End\_dbconnect.php';
+    include 'hash.php';
     $username = $_POST["username"];
     $password = $_POST["password"];
     
-        $sql = "Select * from user where username='$username' AND password='$password'";
+        $sql = "Select * from user where username='$username'";
         $result = mysqli_query($conn, $sql);
-        $num=mysqli_num_rows($result);
-        if ($num ==1) {
+        $user = mysqli_fetch_row($result);
+        echo $user[4];
+        echo $password;
+        echo Hash::verify($password, $user[4]);
+        if (Hash::verify($password,$user[4])){
           $login = true;
           session_start();
             $row = mysqli_fetch_array($result);

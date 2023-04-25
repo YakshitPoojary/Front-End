@@ -3,34 +3,11 @@ $showAlert = false;
 $showError = false;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include '..\..\Back-End\_dbconnect.php';
-	
-	// echo "connected";
-    // include ‘partials/_dbconnect.php';
-    // $username = $_POST["username"];
-    // $password = $_POST["password"];
-    // $cpassword = $_POST["cpassword"];
-    // $firstName = $_POST["firstName"];
-    // $lastName = $_POST["lastName"];
-    // $email = $_POST["email"];
     $branch = $_POST['branch'];
 	echo $branch;
-    // $role = $_POST['role'];
-    // $exists = false;
-    // if (($password == $cpassword) && $exists == false) {
-    // // if ($exists == false) {
-    //     $sql = "INSERT INTO `user` (`id`, `fname`, `lname`, `email`, `password`, `username`, `branch_id`, `role`, `admin`) VALUES (NULL, '$firstName', '$lastName', '$email', '$password', '$username', '$branch', '$role', '1')";
-    //     $result = mysqli_query($conn, $sql);
-    //     if ($result) {
-    //         $showAlert = true;
-    //     }
-    // }
-    // else{
-    //     $showError="User already exist or the passwords dont match";
-    // }
+   
 }
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -76,18 +53,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 						<label>Notes File</label>
 						<input type="file" name="notesfile" id="notesfile" class="form-control">
-
-						<!-- <label> File Type</label>
-						<select class="form-control" name="filetype">
-							<option value="PDF">--- Select File ---</option>
-							<option value="PDF">PDF</option>
-							<option value="PPT">PPT</option>
-							<option value="DOC/DOCX">DOC/DOCX</option>
-							<option value="TXT">TXT</option>
-							<option value="Image">Image</option>
-							<option value="ZIP/RAR">ZIP/RAR</option>
-						</select> -->
-
 						<label>Description</label>
 						<textarea class="form-control" rows="3" name="description" id="description" ></textarea>
 						<input type="submit" class="btn btn-primary mt-2" value="Submit">
