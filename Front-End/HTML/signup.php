@@ -74,7 +74,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $result = mysqli_query($conn,$sql);
                     $user = mysqli_fetch_row($result);
                     echo $password;
-                    $password = Hash::make($password);
+                    // $password = Hash::make($password);
+                    $password = password_hash($password,PASSWORD_BCRYPT, ['cost'=>10]);
                     $sql = "update `user` set fname = '$firstName', lname = '$lastName', password = '$password', username = '$username', branch_id = '$branch', role = '$role', admin = '1' where `id` = $user[0]";
 
                     $result = mysqli_query($conn, $sql);

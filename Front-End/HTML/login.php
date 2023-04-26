@@ -2,21 +2,28 @@
 
 $login = false;
 $showError = false;
+session_start();
+error_reporting(E_ALL ^ E_WARNING);        // used to ignore all the warning messages
+if($_SESSION['msg']) {
+  echo $_SESSION['msg'].'<br/>';
+  }
+  session_destroy();
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
     include '..\..\Back-End\_dbconnect.php';
-    include 'hash.php';
+    // include 'hash.php';
     $username = $_POST["username"];
     $password = $_POST["password"];
     
         $sql = "Select * from user where username='$username'";
         $result = mysqli_query($conn, $sql);
         $user = mysqli_fetch_row($result);
-        echo $user[4];
-        echo $password;
-        echo Hash::verify($password, $user[4]);
-        // if (Hash::verify($password,$user[4])){
-          if($password==$user[4]){
+        // echo $user[4];
+        // echo $password;
+        // echo password_verify($password, $user[4]);
+        // echo Hash::verify($password, $user[4]);
+        if (password_verify($password,$user[4])){
+          // if($password==$user[4]){
           $login = true;
           session_start();
             $row = mysqli_fetch_array($result);
@@ -130,9 +137,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
       <!-- <a href="user_profile.html" class="btn btn-primary btn-block mb-4">Login</a> -->
     </div>
 
+    <div class="text-center mt-2">
+      <p><a href="forgotpass.php">Forgot Password ?</a></p>
+    </div>
+
     <!-- Register buttons -->
     <div class="text-center mt-1">
-      <p>Not a member? <a href="signup.php">Register</a></p>
+      <p><a href="signup.php">Register</a></p>
     </div>
   </form>
 
