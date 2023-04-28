@@ -21,7 +21,7 @@
             <li><a href="home.php" target="_top" class="nav-link px-2 link-secondary me-3">Home</a></li>
             <li><a href="notes_display.php" target="_top" class="nav-link px-2 link-dark me-3">Search Notes</a></li>
             <li><a href="upload_notes.php" target="_top" class="nav-link px-2 link-dark me-3">Upload Notes</a></li>
-            <li><a href="user_contact.html" target="_top" class="nav-link px-2 link-dark me-3">Contact Us</a></li>
+            <li><a href="contact.php" target="_top" class="nav-link px-2 link-dark me-3">Contact Us</a></li>
         </ul>
 
         <div class="col-md-3 text-end pe-4">
