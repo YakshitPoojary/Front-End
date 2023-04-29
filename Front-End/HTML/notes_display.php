@@ -44,57 +44,114 @@
     </form>
 
     <table id="dataTable" >
-        <thead>
+    <thead>
             <tr>
+                
                 <th style="width: 139px;">
-                    <div style="padding-left:5px;padding-right:10px;white-space:nowrap;text-decoration: underline;text-align:left">ID</div>
+                    <div style="padding-left:5px;padding-right:10px;white-space:nowrap;text-decoration: underline;text-align:center">Uploaded By</div>
                 </th>
-                <th style="width: 300px;">
-                    <div style="padding-left:5px;padding-right:10px;white-space:nowrap;text-decoration: underline;text-align:left">Topic Name</div>
+                <th style="width: 500px;">
+                    <div style="padding-left:5px;padding-right:10px;white-space:nowrap;text-decoration: underline;text-align:center">Topic Name</div>
                 </th>
-                <th style="width: 282px;">
-                    <div style="padding-left:5px;padding-right:10px;white-space:nowrap;text-decoration: underline;text-align:left">File Type</div>
+                <th style="width: 100px;">
+                    <div style="padding-left:5px;padding-right:10px;white-space:nowrap;text-decoration: underline;text-align:center">File Type</div>
                 </th>
-                <th style="width: 139px;">
-                    <div style="padding-left:5px;padding-right:10px;white-space:nowrap;text-decoration: underline;text-align:center">Date</div>
-                </th>
-                <th style="width: 71px;">
-                    <div style="padding-left:5px;padding-right:10px;white-space:nowrap;text-decoration: underline;text-align:right">Size MB</div>
+                <th style="width: 400px;">
+                    <div style="padding-left:5px;padding-right:10px;white-space:nowrap;text-decoration: underline;text-align:center">Desciption</div>
                 </th>
                 <th style="width: 138px;">
                     <div style="padding-left:5px;padding-right:10px;white-space:nowrap;text-decoration: none;text-align:center">Download</div>
                 </th>
+                <th style="width: 138px;">
+                    <div style="padding-left:5px;padding-right:10px;white-space:nowrap;text-decoration: none;text-align:center">Uploader Status</div>
+                </th>
+                
+                
             </tr>
         </thead>
     <?php
+    
+    include '..\..\Back-End\_dbconnect.php';
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
         $filesInFolder = array();
         $branch = $_POST['branch'];
           $subject = $_POST['subject'];
           $module = $_POST['module'];
               
-              $filePath = '../notes/'. $branch . '/' . $subject . '/' . $module;
-              $downloadPath = 'front-end/notes/'. $branch . '/' . $subject . '/' . $module;
-    $iterator = new FilesystemIterator($filePath);
+          $filePath =  $branch . '/' . $subject . '/' . $module;
+          $notefile = '../notes/'. $branch . '/' . $subject . '/' . $module;
+              //   echo $filePath;
+              $sql = "Select * from note where `directory`= '$filePath' AND `status`='1'";
+              $result = mysqli_query($conn, $sql);
+              //   $notes = mysqli_fetch_row($result);
+              //   if (mysqli_num_rows($result) > 0) { 
+                  //   while($notes = mysqli_fetch_assoc($result)){
+                      //       echo 
+                      //       $notes["title"];
+                      //   }
+                      // }
+                      
+                      $downloadPath = 'front-end/notes/'. $branch . '/' . $subject . '/' . $module;
+                      $iterator = new FilesystemIterator($notefile);
+                      
+              foreach($iterator as $entry){
+                  $filesInFolder[] = $entry->getFilename();
+              }
+              foreach($filesInFolder as $file){
+                  //     echo "<a href='/$downloadPath/$file'> <br>$file </a>";
+                  if (mysqli_num_rows($result) > 0) { 
+                      while($notes = mysqli_fetch_assoc($result)){
+                          // echo 
+                          // $notes["title"];
+                          $id=$notes["user_id"];
+                          // $delid=$notes["id"];
+                          $sql="Select * from `user` where `id`='$id'";
+                          $takeuser = mysqli_query($conn, $sql);
+                          $username = mysqli_fetch_row($takeuser);
+                        //   echo $username[7];
+                          if($username[7]==0){
+                            $username[7] = "Teacher";
+                        }else{
+                              $username[7] = "Student";
 
-    foreach($iterator as $entry){
-        $filesInFolder[] = $entry->getFilename();
-    }
-    foreach($filesInFolder as $file){
-    //     echo "<a href='/$downloadPath/$file'> <br>$file </a>";
-    
-        echo "<tr>
-            <td>#1</td>
-            <td><a href='/$downloadPath/$file'> <br>$file </a></td>
-            <td>Pdf File</td>
-            <td>16/03/23</td>
-            
-            <td>11.65</td>
-            <td>
-               <a href='../../$downloadPath/$file' download='$file'>Download</a>
-            </td>
-        </tr>";
-    }}
+                          }
+                          // if(isset($_POST['delete'])) {
+                              //     echo "This is Button1 that is selected";
+                              // }
+                              // if(isset($_POST['accept'])) {
+                                  //     echo "This is Button2 that is selected";
+                                  // }
+                      
+                      
+                      echo "<tr>
+                      <td style='text-align:center'> #".$notes["user_id"]."&emsp;".$username[5]."</td>
+                      <td style='text-align:left'><a href='/$downloadPath/".$notes["title"]."'> <br>".$notes["title"]." </a></td>
+                      <td style='text-align:center'>".$notes["ext"]."</td>
+                      
+                      <td style='text-align:left'>".$notes["desc"]."</td>
+                      <td style='text-align:center'>
+                      <a href='../../$downloadPath/".$notes["title"]."' download='$file'>Download</a>
+                      </td>
+                      
+                      <td style='text-align:center'> ".$username[7]."</td>
+                      </tr>";
+                  }}else{
+                      echo "<tr>
+                      <td></td>
+                      <td><a href='/$downloadPath/$file'> <br> No result found for Your search </a></td>
+                      <td></td>
+                      <td></td>
+                      
+                      <td></td>
+                      <td>
+                      <a href='../../$downloadPath/$file' download='$file'>Download</a>
+                      </td>
+                      </tr>";
+                      // echo "No result found for Your search";
+                  }
+              }
+            }
         ?>
          <!-- <a onclick="javascript:App.downloadFile('acbf54add47d11e780f095013bcae46c');" href="javascript:void(0);">
                     DOWNLOAD

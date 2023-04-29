@@ -26,6 +26,7 @@ header('Location: notes_display.php');
 
     <form class="m-4 p-4 row align-items-center" name="form1" id="form1" method='post'>
         <div class="col-md-3 col-sm-12 mb-5 form-group">
+         
             <label for="branch" class="form-label">Branch: </label>
             <select class="form-select" name="branch" id="branch">
                 <option value="" selected disabled>Please Select Branch</option>
@@ -74,6 +75,8 @@ header('Location: notes_display.php');
                 </th>
                 <th style="width: 138px;">
                     <div style="padding-left:5px;padding-right:10px;white-space:nowrap;text-decoration: none;text-align:center">Status</div>
+                    <th style="width: 50px;">
+                    <div style="padding-left:5px;padding-right:10px;white-space:nowrap;text-decoration: none;text-align:center">Current Status</div>
                 </th>
                 
             </tr>
@@ -81,19 +84,38 @@ header('Location: notes_display.php');
         <?php
     include '..\..\Back-End\_dbconnect.php';
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        function delete(){
-            header('Location: login.php');
-            include '..\..\Back-End\_dbconnect.php';
-            $sql="DELETE FROM note WHERE `note`.`id` = ".$delid;
-            $delete = mysqli_query($conn, $sql);
-            echo "deleted";
-            
-        }
+        
         $filesInFolder = array();
-        // $_SESSION['branch'] =$_POST['branch'];
         $branch = $_POST['branch'];
         $subject = $_POST['subject'];
         $module = $_POST['module'];
+        // $noteupdate = $_POST['accept'];
+        if (isset($_POST['branch'])){
+            
+
+        }
+        // echo $noteupdate;
+        // echo $_POST['note_id'];
+        // print_r($_POST);
+        if(isset($_POST['accept'])){
+            $sql = "UPDATE `note` SET `status` = '1' WHERE `note`.`id` = ".$_POST["note_id"];
+            // echo $sql;
+            $result = mysqli_query($conn, $sql);
+            echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+              <strong>Successfull!</strong> Note accepted
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>';
+            
+        }
+        if(isset($_POST["delete"])){
+            $sql = "UPDATE `note` SET `status` = '0' WHERE `note`.`id` = ".$_POST["note_id"];
+            $result = mysqli_query($conn, $sql);
+            // header('Location: upload.php');
+            
+        }
+         
         
         //   $filePath = '../notes/'. $branch . '/' . $subject . '/' . $module;
         $filePath =  $branch . '/' . $subject . '/' . $module;
@@ -122,10 +144,16 @@ header('Location: notes_display.php');
                         // echo 
                         // $notes["title"];
                         $id=$notes["user_id"];
-                        $delid=$notes["id"];
+                        // $delid=$notes["id"];
                         $sql="Select * from `user` where `id`='$id'";
                         $takeuser = mysqli_query($conn, $sql);
                         $username = mysqli_fetch_row($takeuser);
+                        if($notes["status"]==1){
+                            $status=' style="background-color: #198754; text-align:center;"> ACCEPTED';
+                        }else{
+                            $status='  style="background-color: #dc3545; text-align:center;"> REJECTED';
+                            
+                        }
                         // if(isset($_POST['delete'])) {
                             //     echo "This is Button1 that is selected";
                             // }
@@ -135,7 +163,7 @@ header('Location: notes_display.php');
                     
                     
                     echo "<tr>
-                    <td style='text-align:center'> #".$delid."</td>
+                    <td style='text-align:center'> #".$notes["id"]."</td>
                     <td style='text-align:left'><a href='/$downloadPath/".$notes["title"]."'> <br>".$notes["title"]." </a></td>
                     <td style='text-align:center'>".$notes["ext"]."</td>
                     <td style='text-align:center'> #".$notes["user_id"]."&emsp;".$username[5]."</td>
@@ -144,9 +172,10 @@ header('Location: notes_display.php');
                     <td style='text-align:center'>
                     <a href='../../$downloadPath/".$notes["title"]."' download='$file'>Download</a>
                     </td>
-                    <td><button onclick='delete()' class='btn btn-danger' value='delete' ><i class='fa-solid fa-xmark'></i></button>
-                    <button type='submit' class='btn btn-success' value='accept'><i class='fa-solid fa-check'></i></button>
+                    <td><form method='post'><input type='number'  name='note_id'  value='".$notes["id"]."' hidden/><button class='btn btn-danger' name='delete' ><i class='fa-solid fa-xmark'></i></button>
+                    <button type='submit' class='btn btn-success' name='accept'><i class='fa-solid fa-check'></i></button></form>
                     </td>
+                    <td".$status."</td>
                     </tr>";
                 }}else{
                     echo "<tr>
