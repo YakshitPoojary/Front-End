@@ -9,9 +9,10 @@
     <li><a href="home.php" target="_top" class="nav-link px-2 link-secondary me-3">Home</a></li>
     <li><a href="admin_display.php" target="_top" class="nav-link px-2 link-dark me-3">Search Notes</a></li>
     <li><a href="upload_notes.php" target="_top" class="nav-link px-2 link-dark me-3">Upload Notes</a></li>
-    <li><a href="contact.php" target="_top" class="nav-link px-2 link-dark me-3">Contact Us</a></li>
+    <li><a href="user_profile.php" target="_top" class="nav-link px-2 link-dark me-3">My Profile</a></li>
     
   </ul>
+  
   <div class="col-md-3 text-end pe-4">
     <a href="logout.php" target="_top"><button type="button" class="btn btn-outline-primary me-4">Logout</button></a>
   </div>

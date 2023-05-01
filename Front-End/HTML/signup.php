@@ -130,7 +130,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <header class="row align-items-center justify-content-center align-item-center mb-3 mt-3" style="--bs-gutter-x: 0;">
         <div class="col-2 text-center">
-            <a href="home.html" class="align-items-center fs-1 text-decoration-none f-playfair" style="color: #F64C72;">
+            <a href="home.php" class="align-items-center fs-1 text-decoration-none f-playfair" style="color: #F64C72;">
                 <b><em>Notedemy</em></b>
             </a>
         </div>
@@ -139,8 +139,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
                 <li><a href="home.php" class="nav-link px-2 link-secondary me-3">Home</a></li>
                 <li><a href="user_profile.php" class="nav-link px-2 link-dark me-3">Profile</a></li>
-                <li><a href="#" class="nav-link px-2 link-dark me-3">FAQs</a></li>
-                <li><a href="contact.html" class="nav-link px-2 link-dark me-3">Contact Us</a></li>
+                <li><a href="notes_display.php" class="nav-link px-2 link-dark me-3">Search Notes</a></li>
+                <li><a href="upload_notes.php" class="nav-link px-2 link-dark me-3">Upload Notes</a></li>
             </ul>
         </div>
 
