@@ -25,7 +25,7 @@ session_start();
 
         // this code is for adding data in database
         include '..\..\Back-End\_dbconnect.php';
-        $sql = "INSERT INTO `note` (`id`, `title`, `extension`, `description`, `status`, `user_id`, `directory`) VALUES (NULL, '$fileName', '$ext', '$description', NULL, '$id', '$filePath');";
+        $sql = "INSERT INTO `note` (`id`, `title`, `ext`, `desc`, `status`, `user_id`, `directory`) VALUES (NULL, '$fileName', '$ext', '$description', 0, '$id', '$filePath');";
         $result = mysqli_query($conn, $sql);
         
         
