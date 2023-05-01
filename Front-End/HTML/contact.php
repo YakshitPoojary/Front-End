@@ -1,3 +1,18 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") 
+{
+$name = $_POST['name'];
+$email = $_POST['conemail'];
+$phone =$_POST['phone'];
+$message =$_POST['message'];
+// print_r($_POST);
+include '..\..\Back-End\_dbconnect.php';
+
+$sql ="INSERT INTO `query` (`name`, `email`, `phone`, `msg`, `date`) VALUES ('$name', '$email', '$phone', '$message', current_timestamp());";
+$result = mysqli_query($conn, $sql);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,36 +35,40 @@
     </div> -->
     <div class="container d-flex  justify-content-center">
 
-
+<form method="post">
         <div class="row input-container ">
             <div class="col-xs-12">
                 <div class="styled-input wide justify-content-center align-items-center ">
-                    <input type="text" required />
+                    <input type="text" name = "name" required />
                     <label>Name</label>
                 </div>
             </div>
             <div class="col-md-6 col-sm-12">
                 <div class="styled-input">
-                    <input type="text" required />
+                    <input type="text" name="conemail" required />
                     <label>Email</label>
                 </div>
             </div>
             <div class="col-md-6 col-sm-12">
                 <div class="styled-input" style="float:right;">
-                    <input type="text" required />
+                    <input type="text" name="phone" required />
                     <label>Phone Number</label>
                 </div>
             </div>
             <div class="col-xs-12">
                 <div class="styled-input wide">
-                    <textarea required></textarea>
+                    <textarea name="message" required></textarea>
                     <label>Message</label>
                 </div>
             </div>
             <div class="col-xs-12">
-                <div class="btn-lrg submit-btn">Send Message</div>
+                <input type="submit" class="btn-lrg submit-btn" value="Send Message">
             </div>
+            <!-- <div class="col-md-3 col-sm-12 mb-5 mt-4">
+            <input type="submit" class="col-3 btn btn-primary" value="Search">
+        </div> -->
         </div>
+</form>
     </div>
 
 </body>
