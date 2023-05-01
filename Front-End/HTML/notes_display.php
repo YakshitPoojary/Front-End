@@ -95,13 +95,17 @@
                       $downloadPath = 'front-end/notes/'. $branch . '/' . $subject . '/' . $module;
                       $iterator = new FilesystemIterator($notefile);
                       
-              foreach($iterator as $entry){
+              foreach($iterator as $entry)
+              {
                   $filesInFolder[] = $entry->getFilename();
               }
-              foreach($filesInFolder as $file){
+              foreach($filesInFolder as $file)
+              {
                   //     echo "<a href='/$downloadPath/$file'> <br>$file </a>";
-                  if (mysqli_num_rows($result) > 0) { 
-                      while($notes = mysqli_fetch_assoc($result)){
+                  if (mysqli_num_rows($result) > 0) 
+                  { 
+                      while($notes = mysqli_fetch_assoc($result))
+                      {
                           // echo 
                           // $notes["title"];
                           $id=$notes["user_id"];
@@ -110,10 +114,13 @@
                           $takeuser = mysqli_query($conn, $sql);
                           $username = mysqli_fetch_row($takeuser);
                         //   echo $username[7];
-                          if($username[7]==0){
+                          if($username[7]==0)
+                          {
                             $username[7] = "Teacher";
+                            $highlight = '; border-style:solid; border-color: #FFFFE0;';
                         }else{
-                              $username[7] = "Student";
+                            $username[7] = "Student";
+                            $highlight = '; background-color: #FFFFFF;';
 
                           }
                           // if(isset($_POST['delete'])) {
@@ -125,33 +132,32 @@
                       
                       
                       echo "<tr>
-                      <td style='text-align:center'> #".$notes["user_id"]."&emsp;".$username[5]."</td>
-                      <td style='text-align:left'><a href='/$downloadPath/".$notes["title"]."'> <br>".$notes["title"]." </a></td>
-                      <td style='text-align:center'>".$notes["ext"]."</td>
+                      <td style='text-align:center".$highlight."'> #".$notes["user_id"]."&emsp;".$username[5]."</td>
+                      <td style='text-align:left".$highlight."'><a href='/$downloadPath/".$notes["title"]."'>".$notes["title"]." </a></td>
+                      <td style='text-align:center".$highlight."'>".$notes["ext"]."</td>
                       
-                      <td style='text-align:left'>".$notes["desc"]."</td>
-                      <td style='text-align:center'>
+                      <td style='text-align:left".$highlight."'>".$notes["desc"]."</td>
+                      <td style='text-align:center".$highlight."'>
                       <a href='../../$downloadPath/".$notes["title"]."' download='$file'>Download</a>
                       </td>
-                      
-                      <td style='text-align:center'> ".$username[7]."</td>
+                      <td style='text-align:center".$highlight."'> ".$username[7]."</td>
                       </tr>";
-                  }}else{
-                      echo "<tr>
-                      <td></td>
-                      <td><a href='/$downloadPath/$file'> <br> No result found for Your search </a></td>
-                      <td></td>
-                      <td></td>
-                      
-                      <td></td>
-                      <td>
-                      <a href='../../$downloadPath/$file' download='$file'>Download</a>
-                      </td>
-                      </tr>";
-                      // echo "No result found for Your search";
-                  }
-              }
+                    }
+                }
             }
+                echo "<tr>
+                <td style = 'text-align:center'>-x-</td>
+                <td style = 'text-align:center'>-x-</td>
+                <td style = 'text-align:center'>-x-</td>
+                <td style = 'text-align:center'>-x-</td>
+                
+                <td style = 'text-align:center'>-x-</td>
+                <td style = 'text-align:center'>-x-</a>
+                </td>
+                </tr>";
+                // echo "No result found for Your search";
+              }
+            
         ?>
          <!-- <a onclick="javascript:App.downloadFile('acbf54add47d11e780f095013bcae46c');" href="javascript:void(0);">
                     DOWNLOAD

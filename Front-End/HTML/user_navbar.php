@@ -12,8 +12,19 @@
     <li><a href="user_profile.php" target="_top" class="nav-link px-2 link-dark me-3">My Profile</a></li>
     
   </ul>
-  
+  <?php
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
+    // header("location: login.php");
+    // exit;
+    echo "hello";
+}else{
+  $logout = '
   <div class="col-md-3 text-end pe-4">
     <a href="logout.php" target="_top"><button type="button" class="btn btn-outline-primary me-4">Logout</button></a>
-  </div>
+  </div>';
+  echo $logout;
+
+}
+
+  ?>
 </header>
