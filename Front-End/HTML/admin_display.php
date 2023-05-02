@@ -79,6 +79,7 @@ header('Location: notes_display.php');
                 </th>
                 <th style="width: 138px;">
                     <div style="padding-left:5px;padding-right:10px;white-space:nowrap;text-decoration: none;text-align:center">Status</div>
+                    </th>
                     <th style="width: 50px;">
                         <div style="padding-left:5px;padding-right:10px;white-space:nowrap;text-decoration: none;text-align:center">Current Status</div>
                     </th>
